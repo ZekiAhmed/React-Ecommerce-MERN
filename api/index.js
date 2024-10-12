@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoute from "./routes/user.route.js";
 import authRoute from "./routes/auth.route.js";
+import productRoute from "./routes/product.route.js";
 
 const app = express();
 dotenv.config();
@@ -15,6 +16,7 @@ mongoose
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/products", productRoute);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend Server is runing");
