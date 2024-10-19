@@ -6,10 +6,13 @@ import authRoute from "./routes/auth.route.js";
 import productRoute from "./routes/product.route.js";
 import cartRoute from "./routes/cart.route.js";
 import orderRoute from "./routes/order.route.js";
+import stripeRoute from "./routes/stripe.js";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
 app.use(express.json());
+app.use(cors);
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -21,6 +24,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
+app.use("/api/checkout", stripeRoute);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend Server is runing");
