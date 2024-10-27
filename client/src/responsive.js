@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from "@mui/material";
 
 export const mobile = (props) => {
   return css`

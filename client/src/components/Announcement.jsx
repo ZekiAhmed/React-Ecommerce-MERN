@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import { styled } from "@mui/material";
 
-const Container = styled.div`
+const ContainerDiv = styled("div")`
   height: 30px;
   background-color: teal;
   color: white;
@@ -12,7 +12,9 @@ const Container = styled.div`
 `;
 
 const Announcement = () => {
-  return <Container>Super Deal! Free Shipping on Orders Over $50</Container>;
+  return (
+    <ContainerDiv>Super Deal! Free Shipping on Orders Over $50</ContainerDiv>
+  );
 };
 
 export default Announcement;

@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { categories } from "../data";
 import { mobile } from "../responsive";
 import CategoryItem from "./CategoryItem";
 
-const Container = styled.div`
+const Container = styled("div")`
   display: flex;
   padding: 20px;
   justify-content: space-between;
